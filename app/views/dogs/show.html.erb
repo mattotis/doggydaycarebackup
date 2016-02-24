@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @dog.name %> <%= @dog.last_name %></h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @dog.dob.stamp('February 14, 2015') %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @dog.breed.try(:name) %>
+</p>
+
+<p>
+  <strong>Medical conditions:</strong>
+  <%= @dog.medical_conditions %>
+</p>
+
+<p>
+  <strong>Vet:</strong>
+  <%= @dog.vet.try(:doctor) %>
+</p>
+
+<p>
+  <strong>In daycare:</strong>
+  <%= @dog.in_daycare ? 'yes' : 'no' %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>
